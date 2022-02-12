@@ -45,10 +45,19 @@ router.post('/update_score/:game', async (req, res) => {
         let user = getDetails(tok);
         let email = user.email
         let t = `scores.${game}`
-        let r = await User.updateOne({email},{
-            $set: {[t] : new_score}
-        })
-        res.status(200).send({r})
+        let v = await User.find({email}).select("scores")
+        console.log(v)
+        if(v[0].scores[game] < new_score ){
+            console.log("New score higher");
+            let r = await User.updateOne({email},{
+                $set: {[t] : new_score}
+            })
+            res.status(200).send({r})
+        }
+        else{
+            res.status(200).send({"Status" : "Could not update"})
+        }
+        
     }
     catch (err) {
         res.status(404).json({ err: "Could not update score" })
