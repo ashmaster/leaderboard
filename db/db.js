@@ -1,3 +1,3 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://ashish:excel@cluster0.glq1h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://cstech:cstech@cluster0.thd0lbm.mongodb.net/?retryWrites=true&w=majority')

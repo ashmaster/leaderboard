@@ -11,10 +11,7 @@ const userSchema = mongoose.Schema({
         unique: true,
     },
     scores: {
-        menja: {type: Number},
-        cjump: {type: Number},
-        puzzle: {type: Number},
-        towerb: {type: Number}
+        exagon: {type: Number},
     }
     
 })

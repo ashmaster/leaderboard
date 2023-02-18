@@ -11,10 +11,7 @@ router.post('/create_user', async (req, res) => {
         console.log("Create user called")
         console.log("USer details:", u)
         u.scores = {};
-        u.scores["menja"] = 0;
-        u.scores["cjump"] = 0;
-        u.scores["puzzle"] = 0;
-        u.scores["towerb"] = 0;
+        u.scores["exagon"] = 0;
         console.log(u)
         const user = new User(u)
         await user.save()
